@@ -10,7 +10,6 @@ const TOKEN =
 
 const options = {
   headers: {
-    // Замість api_read_access_token вставте свій токен
     Authorization: ` Bearer ${TOKEN} `,
   },
 };

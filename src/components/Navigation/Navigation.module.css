@@ -50,6 +50,7 @@ position: relative;
     height: 50px;
    background-color: #4b4a4a71;
    display: flex;
+   justify-content: center;
   }
   /* .active{
     color:red;

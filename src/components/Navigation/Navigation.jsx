@@ -17,6 +17,8 @@ const Navigation = () => {
           Movies
         </NavLink>
       </nav>
+   
+      
     </>
   );
 };
