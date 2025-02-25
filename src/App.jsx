@@ -1,16 +1,25 @@
+import "./App.css";
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import './App.css'
-
+const HomePage = lazy(() => import("./pages/HomePage.jsx"));
+const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage.jsx"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage.jsx"));
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 function App() {
-const KEY = '87e9196d501fb3a8a98bfa4501e63d55'
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4N2U5MTk2ZDUwMWZiM2E4YTk4YmZhNDUwMWU2M2Q1NSIsIm5iZiI6MTc0MDQxNDA4OC43NTAwMDAyLCJzdWIiOiI2N2JjOWM4OGEyMzkyOWFjMjhiZjEzMDQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.pRmQHw7agpfQVtFaSwr8hAzW5HvzttlkKGuU9ackrMY'
-
   return (
     <>
-      hello
+      <Suspense fallback={<div>Зачекайте...</div>}>
+        <Routes>
+          
+          <Route path="/" element={<HomePage />} />
+          <Route path="/details" element={<MovieDetailsPage />} />
+          <Route path="/movie" element={<MoviesPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </>
-  )
+  );
 }
 
-
-export default App
+export default App;
