@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.themoviedb.org/3/";
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
 const url =
   "https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1";
@@ -10,7 +10,7 @@ const TOKEN =
 
 const options = {
   headers: {
-    Authorization: ` Bearer ${TOKEN} `,
+    Authorization: `Bearer ${TOKEN}`,
   },
 };
 
@@ -21,8 +21,10 @@ axios
 
 
 export const fetchUrl = async () => {
-const data = await axios.get('users')
-return data.users
+  
+    const response = await axios.get('/trending/movie/day')
+  return response.data.results
+  
 }
 
 
