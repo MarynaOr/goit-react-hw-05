@@ -1,0 +1,19 @@
+.item{
+    display: flex;
+    flex-direction: column;
+list-style-type: none;
+gap: 8px;
+}
+
+.list{
+    color: rgb(97, 81, 91);
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;}
+
+.list:hover{
+    background-color: rgb(255, 210, 238);
+    color: black;
+}

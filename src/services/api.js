@@ -22,7 +22,9 @@ axios
 
 export const fetchUrl = async () => {
   
-    const response = await axios.get('/trending/movie/day')
+    const response = await axios.get('/trending/movie/day',{
+      params: {api_key: API_KEY}
+    })
   return response.data.results
   
 }
