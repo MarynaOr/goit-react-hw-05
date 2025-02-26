@@ -1,7 +1,7 @@
 const MovieDetailsPage = () => {
   return (
     <>
-      <h2>details</h2>
+      
     </>
   );
 };
