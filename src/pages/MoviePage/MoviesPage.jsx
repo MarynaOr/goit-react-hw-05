@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 // import axios from "axios";
 import {fetchMovie} from '../../services/api.js'
-import { useSearchParams } from "react-router-dom";
-// import MovieList from "../../components/MovieList/MovieList.jsx";
+import { Outlet, useSearchParams } from "react-router-dom";
+import MovieList from "../../components/MovieList/MovieList.jsx";
 import toast, { Toaster } from "react-hot-toast";
 
 // сторінка пошуку кінофільмів за ключовим словом.
@@ -12,7 +12,11 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState(searchParams.get("query") || "");
 
+// 
+
   useEffect(() => {
+if(!query)return
+
     const searchData = async () =>{
       try{
         const response = await fetchMovie(query)
@@ -24,13 +28,18 @@ const MoviesPage = () => {
         
       }
     }
-    setSearchMovies(searchData)
+    searchData();
   }, [query]);
 
-  const handleChangeQuery = (value) => {
-searchParams.get('query',value)
-setSearchParams(searchParams)
-  };
+
+const handleChangeQuery = (value) => {
+  setSearchParams({query:value})
+  setQuery(value)
+}
+//   const handleChangeQuery = (value) => {
+// searchParams.get('query',value)
+// setSearchParams(searchParams)
+//   };
   return (
     <>
       <SearchBar handleChangeQuery={handleChangeQuery} query={query} />
@@ -38,6 +47,8 @@ setSearchParams(searchParams)
   position="top-left"
   reverseOrder={false}
 />
+<MovieList movies={searcsMovies}/>
+<Outlet/>
     </>
   );
 };

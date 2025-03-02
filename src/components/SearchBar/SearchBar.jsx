@@ -8,7 +8,6 @@ const SearchBar = ({handleChangeQuery, query}) => {
    console.log(value);
    handleChangeQuery( value.query)
    
-
   }
 
   // title
