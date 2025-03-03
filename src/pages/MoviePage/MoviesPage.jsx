@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
-// import axios from "axios";
-import {fetchMovie} from '../../services/api.js'
+import { fetchMovie } from "../../services/api.js";
 import { Outlet, useSearchParams } from "react-router-dom";
 import MovieList from "../../components/MovieList/MovieList.jsx";
 import toast, { Toaster } from "react-hot-toast";
@@ -10,45 +9,44 @@ import toast, { Toaster } from "react-hot-toast";
 const MoviesPage = () => {
   const [searcsMovies, setSearchMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get("query") || "");
+  const query=searchParams.get("query") || "";
 
-// 
+  //
 
   useEffect(() => {
-if(!query)return
+    if (!query) return;
 
-    const searchData = async () =>{
-      try{
-        const response = await fetchMovie(query)
-        setSearchMovies(response)
-        
-      } catch(error){
-        toast.error('Виникла помилка')
-        console.error('error moviePage', error)
-        
+    const searchData = async () => {
+      try {
+        const response = await fetchMovie(query);
+        setSearchMovies(response);
+      } catch (error) {
+        toast.error("Виникла помилка");
+        console.error("error moviePage", error);
       }
-    }
-    searchData();
+    };
+    searchData("");
   }, [query]);
 
+  const handleChangeQuery = (value) => {
+    setSearchParams({ query: value });
+  };
 
-const handleChangeQuery = (value) => {
-  setSearchParams({query:value})
-  setQuery(value)
-}
-//   const handleChangeQuery = (value) => {
-// searchParams.get('query',value)
-// setSearchParams(searchParams)
-//   };
+  // const handleClearQuery = () => {handleClearQuery={handleClearQuery}
+  //   setQuery(''); // Очищаємо query
+  //   setSearchParams({ query: '' }); // Очищаємо searchParams в URL
+  // };
+
+  //   const handleChangeQuery = (value) => {
+  // searchParams.get('query',value)
+  // setSearchParams(searchParams)
+  //   };
   return (
     <>
       <SearchBar handleChangeQuery={handleChangeQuery} query={query} />
-      <Toaster
-  position="top-left"
-  reverseOrder={false}
-/>
-<MovieList movies={searcsMovies}/>
-<Outlet/>
+      <Toaster position="top-left" reverseOrder={false} />
+      <MovieList movies={searcsMovies} />
+      <Outlet />
     </>
   );
 };

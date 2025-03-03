@@ -18,7 +18,7 @@ const options = {
 };
 
 axios
-  .get(url, options)
+  .get(url, options, )
   .then((response) => console.log(response))
   .catch((err) => console.error(err));
 
@@ -30,8 +30,11 @@ export const fetchUrl = async () => {
   
 }
 
-export const fetchMovie = async () => {
-  const response = await axios.get('/search/movie', KEY)
+export const fetchMovie = async (query) => {
+  const response = await axios.get('/search/movie', {
+    ...options,
+    params: {query: query}
+  })
   return response.data.results
 }
 

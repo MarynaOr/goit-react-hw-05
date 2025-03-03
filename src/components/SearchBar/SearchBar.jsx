@@ -1,36 +1,31 @@
 import { Field, Form, Formik } from "formik";
-import s from './SearchBar.module.css'
+import s from "./SearchBar.module.css";
 
-const SearchBar = ({handleChangeQuery, query}) => {
+const SearchBar = ({ handleChangeQuery, query }) => {
+  const initialValues = {
+    query: "",
+  };
 
-
-  const handleSubmit = (value) =>{
-   console.log(value);
-   handleChangeQuery( value.query)
-   
-  }
+  const handleSubmit = (values, { resetForm }) => {
+    console.log(values);
+    handleChangeQuery(values.query);
+    resetForm();
+    // handleClearQuery()
+  };
 
   // title
 
-
-
-   const initialValues ={
-    query,
-   }
   return (
     <>
-      <Formik 
-      initialValues={initialValues}
-      // onChange={handleChangeQuery}
-      onSubmit={handleSubmit}
+      <Formik
+        // key={query}
+        initialValues={initialValues}
+        // onChange={handleChangeQuery}
+        onSubmit={handleSubmit}
       >
         <Form className={s.form}>
-            <Field
-            placeholder='пошук фільмів...'
-            type='text'
-            name='query'
-            />
-            <button type="submit">Пошук</button>
+          <Field placeholder="пошук фільмів..." type="search" name="query" />
+          <button type="submit">Пошук</button>
         </Form>
       </Formik>
     </>
