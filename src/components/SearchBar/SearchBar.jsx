@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import s from "./SearchBar.module.css";
 
-const SearchBar = ({ handleChangeQuery, query }) => {
+const SearchBar = ({ handleChangeQuery }) => {
   const initialValues = {
     query: "",
   };
