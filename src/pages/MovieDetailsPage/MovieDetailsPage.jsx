@@ -19,7 +19,7 @@ const MovieDetailsPage = () => {
         const data = await fetchMovieId(movieId);
         // console.log(data);
         setMoviesId(data);
-      } catch (error) { 
+      } catch (error) {
         console.error("MovieDateilsPage", error);
       }
     };
@@ -45,13 +45,20 @@ const MovieDetailsPage = () => {
       </Link>
 
       <div className={s.con}>
-      <p> {movieId?.budget} </p>
-      <h2> {`${moviesId.original_title}`} </h2>
-      <p></p>
-      <p> {movieId.title} </p>
-      <img src={`https://image.tmdb.org/t/p/w500/${moviesId.poster_path}`} alt="poster" width="260" />  
-       
-  </div>
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${moviesId.poster_path}`}
+          alt="poster"
+          width="260"
+        />
+        <div>
+          <h2 className={s.title}> {moviesId.original_title} </h2>
+          <p className={s.text}>User Score: {Math.round(moviesId.vote_average * 10)}%</p>
+          <h3 className={s.title}>Overiew</h3>
+          <p className={s.text}> {moviesId.overview} </p>
+          <h3 className={s.title}>Genres</h3>
+          <p className={s.text}> {moviesId.genres.map(genre=>genre.name).join(', ')} </p>
+        </div>
+      </div>
       {/* <img src={poster} alt="poster" /> */}
       <nav>
         <Link to={`cast`}>Акторський склад</Link>

@@ -1,12 +1,20 @@
 .nav{
     padding-top: 70px;
-    
+    /* display: flex; */
+   
 }
 
 .con{
 display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 8px;
+
+ /* justify-content: center;
+    align-items: center; */
+padding-left: 48px ;
+margin-top: 12px;
+
+
 }
 
 .btn{
@@ -17,9 +25,32 @@ display: flex;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* transform: background-color 0.7s ease, tr; */
+    margin-left: 48px;
+    margin-bottom: 12px;
+    /* padding-bottom: 12px; */
+
+
 }
 .btn:hover{
     color: rgb(214, 214, 214);
 background-color: #03020281;
 }
+
+.title{
+    color: #FFA500;
+    font-weight: bold;
+
+}
+
+.text{
+    color: rgb(241, 241, 241);
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
