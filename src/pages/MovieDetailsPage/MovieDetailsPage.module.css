@@ -1,3 +1,18 @@
 .nav{
     padding-top: 70px;
 }
+
+.btn{
+    background-color: #0000002a;
+    border-radius: 12px;
+    padding: 8px;
+    color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* transform: background-color 0.7s ease, tr; */
+}
+.btn:hover{
+    color: rgb(214, 214, 214);
+background-color: #03020281;
+}

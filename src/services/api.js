@@ -37,9 +37,13 @@ export const fetchMovie = async (query) => {
 };
 
 export const fetchMovieId = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}`, options); //{ state: location.pathname }
+  const response = await axios.get(`/movie/${movieId}/images`, KEY); //{ state: location.pathname }
   return response.data;
 };
+// console.log(movieId);
 
-
+// export const fetchImageDatails = async (movie_id) =>{
+//   const {data} = await axios.get(`/movie/${movie_id}/images`)
+//   return data.image
+// }
 
