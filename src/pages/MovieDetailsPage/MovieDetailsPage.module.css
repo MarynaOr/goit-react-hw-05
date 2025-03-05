@@ -1,5 +1,12 @@
 .nav{
     padding-top: 70px;
+    
+}
+
+.con{
+display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .btn{

@@ -37,7 +37,9 @@ export const fetchMovie = async (query) => {
 };
 
 export const fetchMovieId = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}/images`, KEY); //{ state: location.pathname }
+  const response = await axios.get(`/movie/${movieId}`, KEY);
+  console.log('info:', response.data);
+  
   return response.data;
 };
 // console.log(movieId);
