@@ -11,12 +11,14 @@ padding: 0;
 }
 
 .list{
-    color: rgb(97, 81, 91);
-    font-weight: 500;
+    color: rgb(255, 230, 246);
+    font-weight: 300;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     font-size: 15px;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;}
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+}
 
 .list:hover{
     background-color: rgb(255, 210, 238);
