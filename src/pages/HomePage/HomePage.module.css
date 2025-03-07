@@ -1,26 +1,22 @@
-.pra{
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 8px;
+.pra {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.title{
-padding-top:  60px ;
-color: #ffffff;}
-
-.text{
-    display: flex;
-    max-width: 90%;
-
-
-
+.title {
+  padding-top: 60px;
+  color: #ffffff;
 }
 
-.text:hover{
-    color: blanchedalmond;
-
+.text {
+  display: flex;
+  max-width: 90%;
 }
 
+.text:hover {
+  color: blanchedalmond;
+}

@@ -10,19 +10,11 @@ const SearchBar = ({ handleChangeQuery }) => {
     console.log(values);
     handleChangeQuery(values.query);
     resetForm();
-    // handleClearQuery()
   };
-
-  // title
 
   return (
     <>
-      <Formik
-        // key={query}
-        initialValues={initialValues}
-        // onChange={handleChangeQuery}
-        onSubmit={handleSubmit}
-      >
+      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={s.form}>
           <Field placeholder="пошук фільмів..." type="search" name="query" />
           <button type="submit">Пошук</button>

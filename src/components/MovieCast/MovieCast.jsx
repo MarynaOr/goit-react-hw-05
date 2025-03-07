@@ -13,7 +13,7 @@ const MovieCast = () => {
     const getData = async () => {
       try {
         const data = await fetchCast(movieId);
-         console.log("Fetched Cast Data:", data);
+        //  console.log("Fetched Cast Data:", data);
         setCast(data.cast || []);
 
         // if (data.cast && Array.isArray(data.cast)) {

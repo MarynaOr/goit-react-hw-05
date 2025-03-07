@@ -1,7 +1,3 @@
-// Для відображення списку фільмів створіть
-//  компонент MovieList. Використовуйте його
-//  на сторінках HomePage і MoviesPage.
-
 import { Link, useLocation } from "react-router-dom";
 import s from "./MovieList.module.css";
 const MovieList = ({ movies = [] }) => {
