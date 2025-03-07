@@ -49,6 +49,7 @@ const MovieDetailsPage = () => {
           src={`https://image.tmdb.org/t/p/w500/${moviesId.poster_path}`}
           alt="poster"
           width="260"
+          height="390"
         />
         <div>
           <h2 className={s.title}> {moviesId.original_title} </h2>
@@ -60,9 +61,9 @@ const MovieDetailsPage = () => {
         </div>
       </div>
       {/* <img src={poster} alt="poster" /> */}
-      <nav>
-        <Link to={`cast`}>Акторський склад</Link>
-        <Link to={`reviews`}>відгуки</Link>
+      <nav className={s.navcon}>
+        <Link className={s.navlink} to={`cast`}>Акторський склад</Link>
+        <Link className={s.navlink} to={`reviews`}>відгуки</Link>
       </nav>
       <div>
         <Outlet />

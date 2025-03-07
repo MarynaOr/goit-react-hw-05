@@ -48,9 +48,29 @@ background-color: #03020281;
 }
 
 
+.navcon{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 48px;
+    padding-left: 60px;
+    margin-top: 24px;
+        background-color: #FFA500;
+margin-bottom: 20px;}
 
 
 
 
+.navlink{
+padding: 4px 8px;
+
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.navlink:hover{
+background-color:  #b37502;
+
+
+}
 
 
